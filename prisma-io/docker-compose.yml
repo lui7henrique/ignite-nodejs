@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  mongo:
+    image: mongo
+    container_name: "prisma_mongo"
+    restart: always 
+    environment:    
+      MONGO_INITDB_DATABASE: db
+    volumes:
+      - './dockervolume/mongodb:/data/db'
+    ports:
+      - 27018:27017
+  
+
